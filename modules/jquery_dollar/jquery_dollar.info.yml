@@ -1,0 +1,10 @@
+name: jQuery Dollar
+description: Allows the use of the $ character to access jQuery
+
+type: module
+# core: 8.x
+# Information added by Drupal.org packaging script on 2017-04-26
+version: '8.x-1.0'
+core: '8.x'
+project: 'jquery_dollar'
+datestamp: 1493243945
