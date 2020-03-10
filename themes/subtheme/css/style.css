@@ -237,8 +237,15 @@ background: #FFD500;
 	
 .navbar-nav > li > a {
 	padding: 0;
-	
+	color: black !important;
 }
+.navbar-nav > li > a:hover {
+    color: #FFD500 !important;	
+}	
+input::placeholder {
+  color: black !important;
+}
+.contextual-region::-webkit-input-placeholder { color: red; }
 .row-row {
 	    margin-bottom: 20px;
     height: 95px;
@@ -260,7 +267,7 @@ max-width: 490px;
 	    float: right;
 }
 .container {
-	max-width: 960px;
+	    max-width: 1140px;
 	    width: 100%;
     padding-right: 15px;
     padding-left: 15px;
@@ -452,6 +459,7 @@ block-main .block-stitle1 {
 }
 .btn {
     border-radius: 0px;
+	margin-right: 0px !important;
 }	
 .btn-primary:after {
     content: url(socket.svg);
@@ -557,7 +565,6 @@ body.submit {
 	    color: #FFD500;
     text-decoration: none;
 }
-
 .block-stitle1> h3 {
 	font-size: 40px;
     font-family: 'SofiaPro-Bold';
@@ -570,6 +577,10 @@ body.submit {
 .block-stitle1> ul {
 	    margin-bottom: 30px;
 		        padding-left: 0px;
+}
+.navbar-nav > li > a.active {
+text-decoration: none;
+    border-bottom: 1px solid #FFD500;
 }
 .form-control {
 	 padding: 25px 20px;
@@ -646,6 +657,7 @@ border-radius: 35px;
     right: 0;
     z-index: 99;
     outline: none;
+	
 		}
 	
 @media (max-width: 768px){
@@ -774,7 +786,7 @@ font-size: 14px;
 }
 .btn-primary {
 	padding: 15px 110px;
-	   margin-left: 0px;
+	       margin-left: 94px;
     margin-right: 0px;
 }
 header .head-content .logo > svg {
