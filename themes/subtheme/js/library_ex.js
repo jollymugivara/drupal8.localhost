@@ -36,7 +36,7 @@ function activateLinks() {
   let section_about = document.getElementById('about');
   let section_contact = document.getElementById('footer');
   let section_services = document.getElementById('services');
-  home_top = section_home.offsetTop + 100;
+  home_top = section_home.offsetTop + 680;
   about_top = section_about.offsetTop + 700
   services_top = section_services.offsetTop + 1500;
   contact_top = section_contact.offsetTop + 2400;
