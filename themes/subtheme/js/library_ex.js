@@ -6,6 +6,7 @@
       activateLinks();
     })});
 
+	
   $('a[href^="#"]').click(function(){
        var target = $(this).attr('href');
        $('html, body').animate({scrollTop: $(target).offset().top}, 1000);
@@ -23,49 +24,6 @@ $('header.navbar').removeClass("glide");
 });
 })(jQuery);
 
-(function ($) {
-$(window).scroll(function() {
-if ($(this).scrollTop() > 1000){
-$('#about').addClass("active").removeClass("active");
-}
-else{
-$('.navbar-header ul li a').removeClass("active");
-}
-});
-})(jQuery);
-
-(function ($) {
-$(window).scroll(function () {
-  $("#navigation_lines").each(function (index) {
-    let id = $(this).attr("id");
-    if ($(this).offset().top - 600 < $(window).scrollTop()) {
-      switch (index) {
-        case 0:
-          $(".nav-line").removeClass(
-            "white", 1000
-          );
-          break;
-        case 1:
-          $(".nav-line").addClass(
-            "white", 1000
-          );
-          break;
-        case 2:
-          $(".nav-line").addClass(
-            "white", 1000
-          ); м
-          break;
-        case 3:
-          $(".nav-line").removeClass(
-            "white", 1000
-          );
-          break;
-      }
-    }
-  });
-});
-})(jQuery);
-
 function activateLinks() {
 
   const header_home = document.getElementById('first'),
@@ -75,11 +33,13 @@ function activateLinks() {
 
 
   let section_home = document.getElementById('home');
+  let section_about = document.getElementById('about');
   let section_contact = document.getElementById('footer');
   let section_services = document.getElementById('services');
   home_top = section_home.offsetTop + 100;
-  services_top = section_services.offsetTop - 100;
-  contact_top = section_contact.offsetTop + 2000;
+  about_top = section_about.offsetTop + 700
+  services_top = section_services.offsetTop + 1500;
+  contact_top = section_contact.offsetTop + 2400;
 
 
   let position = window.scrollY || document.documentElement.scrollTop;
@@ -87,14 +47,37 @@ function activateLinks() {
   if (position) {
     if (position <= home_top) {
       header_home.classList.add('active');
-      header_services.classList.remove('active');
+	    header_home.classList.add('white');
+		 header_about.classList.add('white');
+		header_contact.classList.add('white');
+	  header_services.classList.add('white');
+      header_about.classList.remove('active');
       header_services.classList.remove('active');
       header_contact.classList.remove('active');
+	   } else if ((position > about_top) && (position <= services_top)) {
+      header_about.classList.add('active');
+	  header_about.classList.remove('white');
+	  header_home.classList.remove('white');
+	  header_contact.classList.remove('white');
+	  header_services.classList.remove('white');
+      header_home.classList.remove('active');
+	  header_services.classList.remove('active');
     } else if ((position > services_top) && (position <= contact_top)) {
-     //code
+      header_services.classList.add('active');
+      header_about.classList.remove('active');
+	  header_contact.classList.remove('active');
+	  header_about.classList.remove('white');
+	  header_home.classList.remove('white');
+	  header_contact.classList.remove('white');
+	  header_services.classList.remove('white');
     } else if ((position > contact_top)) {
       header_contact.classList.add('active');
-      header_home.classList.remove('active');
+      header_services.classList.remove('active');
+	   header_about.classList.add('white');
+	  header_home.classList.add('white');
+	  header_contact.classList.add('white');
+	  header_services.classList.add('white');
     }
   }
 }
+
